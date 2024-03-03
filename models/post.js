@@ -26,8 +26,14 @@ Post.init(
         hooks: {
             // Invokes sanitisation code whenever creating or updating the model
             beforeSave: async (post, options) => {
-                post.body = sanitizeHtml(post.body);
-                return post;
+                try {
+                    post.body = sanitizeHtml(post.body);
+                    return post;
+                } catch (error) {
+                    console.error("An error occured while trying to sanitise the content provided: ", error);
+                    return undefined;
+                }
+                
             }
         }
     }
