@@ -14,7 +14,7 @@ Comment.init(
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        blog_id: {
+        post_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
