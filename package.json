@@ -32,6 +32,7 @@
     "express-session-sequelize": "^2.3.0",
     "express-sessions": "^1.0.6",
     "mysql2": "^3.9.2",
+    "sanitize-html": "^2.12.1",
     "sequelize": "^6.37.1"
   }
 }
