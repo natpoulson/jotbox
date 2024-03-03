@@ -33,8 +33,9 @@ Post.init(
                     console.error("An error occured while trying to sanitise the content provided: ", error);
                     return undefined;
                 }
-                
             }
         }
     }
 );
+
+module.exports = Post;

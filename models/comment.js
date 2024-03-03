@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sanitizeHtml = require('sanitize-html');
 
-class Commment extends Model {}
+class Comment extends Model {}
 
 Comment.init(
     {
@@ -9,6 +9,17 @@ Comment.init(
             type: DataTypes.INTEGER.UNSIGNED,
             autoIncrement: true,
             primaryKey: true
+        },
+        commenter_id: {
+            type: DataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+        },
+        blog_id: {
+            type: DataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+        },
+        body: {
+            type: DataTypes.TEXT
         }
     },
     {
@@ -17,9 +28,16 @@ Comment.init(
         modelName: 'comment',
         hooks: {
             beforeSave: async (comment, options) => {
-                comment.body = sanitizeHtml(comment.body);
-                return comment;
+                try {
+                    comment.body = sanitizeHtml(comment.body);
+                    return comment;
+                } catch (error) {
+                    console.error("An error occured while trying to sanitise the content provided: ", error);
+                    return undefined;
+                }
             }
         }
     }
-)
+);
+
+module.exports = Comment;
