@@ -1,3 +1,4 @@
+const sequelize = require('../config/db');
 const { Model, DataTypes } = require('sequelize');
 const sanitizeHtml = require('sanitize-html');
 

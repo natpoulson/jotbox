@@ -1,3 +1,4 @@
+const sequelize = require('../config/db');
 const { Model, DataTypes } = require('sequelize');
 const sanitizeHtml = require('sanitize-html');
 
@@ -22,7 +23,7 @@ Post.init(
         sequelize,
         timestamps: true,
         underscored: true,
-        modelName: 'blog',
+        modelName: 'post',
         hooks: {
             // Invokes sanitisation code whenever creating or updating the model
             beforeSave: async (post, options) => {
