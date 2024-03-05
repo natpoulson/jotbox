@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS jotbox_db;
+CREATE DATABASE jotbox_db;

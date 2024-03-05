@@ -1,0 +1,12 @@
+[
+    {
+        "display_name":"Test User",
+        "email":"test@example.com",
+        "password":"tEst1234%"
+    },
+    {
+        "display_name":"Test Commenter",
+        "email":"domain@example.com",
+        "password":"HowDare3@"
+    }
+]
