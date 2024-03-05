@@ -1,7 +1,12 @@
 [
     {
-        "commenter_id": 1,
+        "commenter_id": 2,
         "post_id": 1,
         "body": "<p>Not gonna lie, not a fan of this one</p>"
+    },
+    {
+        "commenter_id": 1,
+        "post_id": 1,
+        "body": "<p>Sorry I'll make sure to add \"The quick brown fox jumps over the guy who asked\" in the next one.</p>"
     }
 ]
