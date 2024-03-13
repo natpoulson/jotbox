@@ -41,7 +41,7 @@ User.init(
                         ) {
                             return true;
                         }
-                    return false;
+                    throw new Error("Password does not meet complexity requirements");
                 }
             }
         }
@@ -57,7 +57,7 @@ User.init(
                     if ((user.changed('display_name') || user.isNewRecord) && !user['display_name']) {
                         // It can be safely assumed that the email is present, since it would've been screened out by validation otherwise.
                         // The below will capture everything before the @ symbol and use it as the display name as a default if no input is given.
-                        user['display_name'] = /^.+?(?:@)/.exec(user['email'])[0];
+                        user['display_name'] = /^[^@]+/.exec(user['email'])[0];
                     }
                     if (user.changed('password') || user.isNewRecord) {
                         // This is for scenarios where the password's being changed.
