@@ -1,0 +1,25 @@
+{
+    "error": {
+        "general": {
+            "INTERNAL_ERROR": "An unknown exception has been encountered",
+            "BAD_REQUEST": "The request is malformed",
+            "VALIDATION_FAIL": "One or more values provided failed validation checks",
+            "MISSING_PARAMS": "One or more required parameters missing"
+        },
+        "user": {
+            "NO_EMAIL": "E-mail address not provided",
+            "NO_PASSWORD": "Password not provided",
+            "NOT_FOUND": "User not found"
+        }
+    },
+    "response": {
+        "general": {
+            "SUCCESS": "OK"
+        },
+        "user": {
+            "GET": "User found",
+            "POST": "User created",
+            "PUT": "User updated"
+        }
+    }
+}
