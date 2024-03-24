@@ -116,9 +116,18 @@ route.post('/', async (req, res) => {
 route.put('/:id', async (req, res) => {
     try {
         const updateUser = async (req, user) => {
-            // TODO: Add code for updating the user
-            // Check if there's a password and new_password field in request
-            // Update everything else
+            const simpleUser = user.get({plain: true}); // Obtain the user object in its most simple form for easier checking
+
+            for (const key of Object.keys(req.body)) {
+                if (!/^(?:new_)?password$|^id$/.test(key)) {
+                    simpleUser[key] = req.body[key]; // Update the value of simpleUser
+                }
+            }
+
+            // Check if there's a password and new_password field in the req.body
+
+            // Update if the password is valid
+
         }
 
         // Fetch user for checks
